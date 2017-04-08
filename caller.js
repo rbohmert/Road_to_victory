@@ -1,5 +1,5 @@
 var script = document.createElement('script');
-script.src = "https://github.com/agfernan/road_to_victory/compare/master...jbatea:patch-1";
+script.src = "https://rawgit.com/jbatea/Road_to_victory/master/autoscript.js";
 script.onload = function () {
     var images = [
         {

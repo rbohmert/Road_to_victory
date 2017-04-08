@@ -107,8 +107,9 @@ function AutoPXLS(images){
 						break;
 					}
 				}
-				if (color_id == -1)
+				if (color_id == -1){
 					color_id = getNearestColor(pixel);
+				}
 				return color_id;
 		}
 
