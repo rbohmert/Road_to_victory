@@ -48,7 +48,7 @@ function AutoPXLS(images){
 				[207,110,228],
 				[130,0,128]
 			];
-				console.log("getNearestColor");
+				console.log("getNearestColor pixel = %i %i %i", pixel[0], pixel[1], pixel[2]);
 				var tmp_dif = 755;
 				var color_id = 0;
 				for(var i = 0; i < colors.length; i++)
@@ -67,7 +67,7 @@ function AutoPXLS(images){
 						tmp_dif = dif;
 					}
 				}
-				console.log("Nearest color is : %i", color_id);
+				console.log("Nearest color is : %i pixel = %i %i %i", color_id, colors[color_id][0], colors[color_id][1], colors[color_id][2]);
 				return (color_id);
 		}
 
