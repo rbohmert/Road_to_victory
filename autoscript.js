@@ -175,13 +175,16 @@ drawImage: drawImage,
 	}
 
 	function draw(){
+		console.log("DRAW");
 		//var timer = (App.cooldown-(new Date).getTime())/1E3;
 		var timer = lastPlaceTime - new Date().getTime() + cooldown;
 		if(0<timer){
+			console.log("TIMER > 0");
 			console.log("timer: " + timer);
 			setTimeout(draw, 1000);
 		}
 		else{
+			console.log("Timer < 0");
 			for(var i = 0; i < painters.length; i++){
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
@@ -195,6 +198,7 @@ drawImage: drawImage,
 					}
 				}
 				else{
+					console.log("painter isnt ready");
 					continue;
 				}
 			}
