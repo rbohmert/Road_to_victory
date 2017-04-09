@@ -106,6 +106,7 @@ function AutoPXLS(images){
 						break;
 					}
 				}
+				console.log("Color_id = %i", color_id);
 				if (color_id === -1){
 					color_id = getNearestColor(pixel);
 				}
