@@ -124,6 +124,7 @@ function AutoPXLS(images){
 			return 1;
 		}
 		function tryToDraw(){
+			console.log("tryToDraw");
 			while (!pictureIsDone())
 			{
 				var coords = {x: Math.floor(Math.random() * canvas.width), y: Math.floor(Math.random() * canvas.height)};
@@ -179,6 +180,7 @@ drawImage: drawImage,
 	}
 
 	function draw(){
+		console.log("draw");
 		//var timer = (App.cooldown-(new Date).getTime())/1E3;
 		var timer = lastPlaceTime - new Date().getTime() + cooldown;
 		if(0<timer){
@@ -186,6 +188,7 @@ drawImage: drawImage,
 			setTimeout(draw, 1000);
 		}
 		else{
+			console.log("Timer is ok");
 			for(var i = 0; i < painters.length; i++){
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
