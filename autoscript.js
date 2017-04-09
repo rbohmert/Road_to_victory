@@ -109,6 +109,7 @@ function AutoPXLS(images){
 				console.log("Color_id = %i", color_id);
 				if (color_id === -1){
 					color_id = getNearestColor(pixel);
+					console.log("NEW Color_id = %i", color_id);
 				}
 				return color_id;
 		}
