@@ -2,7 +2,7 @@
 function AutoPXLS(images){
 
 	var Painter = function(config){
-		var board = document.getElementById("board").getContext('2d');
+		var board = document.getElementById("canvas").getContext('2d');
 		var title = config.title || "unnamed";
 
 		var img = new Image();
