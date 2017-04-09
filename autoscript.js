@@ -204,18 +204,5 @@ drawImage: drawImage,
 
 		return;
 	}
-
-function tick() {
-	move();
-
-	if (! window.requestAnimationFrame)
-	  render();
-
-	var msTillPlace = lastPlaceTime - new Date().getTime() + cooldown;
-	if (msTillPlace <= 0 && !notified){
-		notifyMe();
-		notified = true;
-	}
-}
 	draw();
 }
