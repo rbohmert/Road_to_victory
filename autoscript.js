@@ -178,21 +178,8 @@ drawImage: drawImage,
 		console.log("DRAW");
 			for(var i = 0; i < painters.length; i++){
 				if(painters[i].isReady()){
-					var result = painters[i].drawImage();
-
-					if(result > 0){
-						console.log("result > 0");
-						console.log("SET TIMEOUT result*1000");
 						setTimeout(draw, result*1000);
 						return;
-					}
-					else{
-						console.log("result < 0");
-						continue;
-					}
-				}
-				else{
-					continue;
 				}
 			}
 			console.log("SET TIEMOUT 3000");
