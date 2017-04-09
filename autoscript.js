@@ -47,7 +47,6 @@ function AutoPXLS(images){
 				[207,110,228],
 				[130,0,128]
 			];
-				console.log("Don't find color, rgb: %i %i %i", pixel[0], pixel[1], pixel[2]);
 				var tmp_dif = 755;
 				var color_id = 0;
 				for(var i = 0; i < colors.length; i++)
@@ -66,7 +65,6 @@ function AutoPXLS(images){
 						tmp_dif = dif;
 					}
 				}
-				console.log("Replace by color n°%i rgb: %i %i %i", color_id, colors[color_id][0], colors[color_id][1], colors[color_id][2]);
 				return (color_id);
 		}
 
@@ -106,7 +104,6 @@ function AutoPXLS(images){
 						break;
 					}
 				}
-				console.log("Color_id = %i", color_id);
 				if (color_id === -1){
 					color_id = getNearestColor(pixel);
 				}
@@ -124,7 +121,6 @@ function AutoPXLS(images){
 			return 1;
 		}
 		function tryToDraw(){
-			console.log("tryToDraw");
 			while (!pictureIsDone())
 			{
 				var coords = {x: Math.floor(Math.random() * canvas.width), y: Math.floor(Math.random() * canvas.height)};
@@ -135,7 +131,6 @@ function AutoPXLS(images){
 					console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
 					//App.switchColor(getColorId(coords));
 					var color_id = getColorId(coords);
-					console.log("WILL PLAY COLOR N: %i", color_id);
 					tryColorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), color_id);
 					//App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
 					return 20;
@@ -180,7 +175,6 @@ drawImage: drawImage,
 	}
 
 	function draw(){
-		console.log("draw");
 		//var timer = (App.cooldown-(new Date).getTime())/1E3;
 		var timer = lastPlaceTime - new Date().getTime() + cooldown;
 		if(0<timer){
@@ -188,7 +182,6 @@ drawImage: drawImage,
 			setTimeout(draw, 1000);
 		}
 		else{
-			console.log("Timer is ok");
 			for(var i = 0; i < painters.length; i++){
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
