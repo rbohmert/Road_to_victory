@@ -186,10 +186,10 @@ drawImage: drawImage,
   						setTimeout(draw, result*1000);
   						return;
   					}
-  					//else{
- +					//	console.log("result < 0");
-  					//	continue;
-  					//}
+  					else{
+ +						console.log("result < 0");
+  						continue;
+  					}
   				}
   				else{
   					continue;
@@ -197,8 +197,7 @@ drawImage: drawImage,
   			}
  +			console.log("SET TIEMOUT 3000");
   			setTimeout(draw, 3000);
- -
   		return;
   	}
-	draw();
-}
+  	draw();
+ }
