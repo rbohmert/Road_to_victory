@@ -134,7 +134,9 @@ function AutoPXLS(images){
 				else{
 					console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
 					//App.switchColor(getColorId(coords));
-					colorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), getColorId(coords));
+					var color_id = getColorId(coords);
+					console.log("WILL PLAY COLOR N: %i", color_id);
+					colorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), color_id);
 					//App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
 					return 20;
 				}
