@@ -121,6 +121,7 @@ function AutoPXLS(images){
 			return 1;
 		}
 		function tryToDraw(){
+			console.log("tryToDraw");
 			while (!pictureIsDone())
 			{
 				var coords = {x: Math.floor(Math.random() * canvas.width), y: Math.floor(Math.random() * canvas.height)};
@@ -180,11 +181,13 @@ drawImage: drawImage,
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
 					if(result > 0){
+						console.log("Set timeout result*100");
 						setTimeout(draw, result*1000);
 						return;
 					}
 				}
 			}
+			console.log("set timeout 3000");
 			setTimeout(draw, 3000);
 		}
 		return;
