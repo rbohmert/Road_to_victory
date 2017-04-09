@@ -189,7 +189,6 @@ drawImage: drawImage,
 			}
 			console.log("set timeout 3000");
 			setTimeout(draw, 3000);
-		}
 		return;
 	}
 	draw();
