@@ -193,9 +193,6 @@ drawImage: drawImage,
 						setTimeout(draw, result*1000);
 						return;
 					}
-					else{
-						continue;
-					}
 				}
 				else{
 					console.log("painter isnt ready");
