@@ -1,4 +1,3 @@
-
 function AutoPXLS(images){
 
 	var Painter = function(config){
@@ -177,7 +176,8 @@ drawImage: drawImage,
 	}
 
 	function draw(){
-		var timer = (App.cooldown-(new Date).getTime())/1E3;
+		//var timer = (App.cooldown-(new Date).getTime())/1E3;
+		var timer = lastPlaceTime - new Date().getTime() + cooldown;
 		if(0<timer){
 			console.log("timer: " + timer);
 			setTimeout(draw, 1000);
@@ -205,5 +205,17 @@ drawImage: drawImage,
 		return;
 	}
 
+function tick() {
+	move();
+
+	if (! window.requestAnimationFrame)
+	  render();
+
+	var msTillPlace = lastPlaceTime - new Date().getTime() + cooldown;
+	if (msTillPlace <= 0 && !notified){
+		notifyMe();
+		notified = true;
+	}
+}
 	draw();
 }
