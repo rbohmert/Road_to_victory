@@ -109,7 +109,6 @@ function AutoPXLS(images){
 				console.log("Color_id = %i", color_id);
 				if (color_id === -1){
 					color_id = getNearestColor(pixel);
-					console.log("NEW Color_id = %i", color_id);
 				}
 				return color_id;
 		}
@@ -136,7 +135,7 @@ function AutoPXLS(images){
 					//App.switchColor(getColorId(coords));
 					var color_id = getColorId(coords);
 					console.log("WILL PLAY COLOR N: %i", color_id);
-					colorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), color_id);
+					tryColorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), color_id);
 					//App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
 					return 20;
 				}
