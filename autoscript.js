@@ -132,8 +132,9 @@ function AutoPXLS(images){
 				}
 				else{
 					console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
-					App.switchColor(getColorId(coords));
-					App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
+					//App.switchColor(getColorId(coords));
+					colorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), getColorId(coords));
+					//App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
 					return 20;
 				}
 			}
