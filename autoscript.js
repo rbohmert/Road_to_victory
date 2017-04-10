@@ -181,14 +181,12 @@ drawImage: drawImage,
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
 					if(result > 0){
-						console.log("Set timeout result 1");
-						setTimeout(draw, 1);
+						setTimeout(draw, 1000*result);
 						return;
 					}
 				}
 			}
-			console.log("draw in 1");
-			setTimeout(draw, 1);
+			setTimeout(draw, 3000);
 		return;
 	}
 	draw();
