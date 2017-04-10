@@ -1,7 +1,8 @@
 function AutoPXLS(images){
 
 	var Painter = function(config){
-		var board = document.getElementById("canvas").getContext('2d');
+		//var board = document.getElementById("canvas").getContext('2d'); //colorthis.space
+		 var board = document.getElementById("board").getContext('2d'); //pxls.space
 		var title = config.title || "unnamed";
 
 		var img = new Image();
@@ -130,10 +131,9 @@ function AutoPXLS(images){
 				}
 				else{
 					console.log("drawing " + title + " coords " + " x:" + (parseInt(x) + parseInt(coords["x"])) + " y:" + (parseInt(y) + parseInt(coords["y"])));
-					//App.switchColor(getColorId(coords));
-					var color_id = getColorId(coords);
-					tryColorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), color_id);
-					//App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) );
+					App.switchColor(getColorId(coords)); //pxls.space
+					//tryColorPixel(parseInt(parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])), getColorId(coords)); //colorthis.space
+					App.attemptPlace ( (parseInt(x) + parseInt(coords["x"])), (parseInt(y) + parseInt(coords["y"])) ); //pxls.space
 					return 20;
 				}
 			}
