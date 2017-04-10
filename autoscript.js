@@ -122,7 +122,6 @@ function AutoPXLS(images){
 			return 1;
 		}
 		function tryToDraw(){
-			console.log("tryToDraw");
 			while (!pictureIsDone())
 			{
 				var coords = {x: Math.floor(Math.random() * canvas.width), y: Math.floor(Math.random() * canvas.height)};
@@ -176,7 +175,6 @@ drawImage: drawImage,
 	}
 
 	function draw(){
-		console.log("DRAW");
 			for(var i = 0; i < painters.length; i++){
 				if(painters[i].isReady()){
 					var result = painters[i].drawImage();
